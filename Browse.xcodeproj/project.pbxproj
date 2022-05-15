@@ -17,6 +17,7 @@
 		B53F63782830DA8000B04052 /* RestaurantCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F63772830DA8000B04052 /* RestaurantCard.swift */; };
 		B53F637A2830DC5E00B04052 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F63792830DC5E00B04052 /* Restaurant.swift */; };
 		B53F637C2830E23200B04052 /* RestaurantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F637B2830E23200B04052 /* RestaurantListView.swift */; };
+		B53F63802830E6FA00B04052 /* RestaurantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F637F2830E6FA00B04052 /* RestaurantList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		B53F63772830DA8000B04052 /* RestaurantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCard.swift; sourceTree = "<group>"; };
 		B53F63792830DC5E00B04052 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		B53F637B2830E23200B04052 /* RestaurantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListView.swift; sourceTree = "<group>"; };
+		B53F637F2830E6FA00B04052 /* RestaurantList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				B53F63772830DA8000B04052 /* RestaurantCard.swift */,
 				B53F637B2830E23200B04052 /* RestaurantListView.swift */,
 				B53F63792830DC5E00B04052 /* Restaurant.swift */,
+				B53F637F2830E6FA00B04052 /* RestaurantList.swift */,
 			);
 			path = Browse;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B53F63802830E6FA00B04052 /* RestaurantList.swift in Sources */,
 				B53F637A2830DC5E00B04052 /* Restaurant.swift in Sources */,
 				B53F63782830DA8000B04052 /* RestaurantCard.swift in Sources */,
 				B53F63502830D96700B04052 /* ContentView.swift in Sources */,

@@ -12,7 +12,7 @@ struct RestaurantCard: View {
 
   var body: some View {
     VStack(spacing: 0) {
-      AsyncImage(url: URL(string: restaurant.image)!) { image in
+      AsyncImage(url: restaurant.image) { image in
         image.resizable()
       } placeholder: {
         ProgressView()
@@ -39,7 +39,7 @@ struct RestaurantCard_Previews: PreviewProvider {
   static var previews: some View {
     RestaurantCard(restaurant: Restaurant(
       id: "1",
-      image: "https://content.demo.microfrontends.com/images/1-burger.jpg",
+      imageSrc: "/images/1-burger.jpg",
       name: "Becky's Burgers",
       priceRange: "$$",
       description: "Juicy burgers, crunchy fries, and creamy shakes"))

@@ -7,10 +7,14 @@
 
 import Foundation
 
-struct Restaurant: Identifiable {
+struct Restaurant: Identifiable, Decodable {
   let id: String
-  let image: String
+  let imageSrc: String
   let name: String
   let priceRange: String
   let description: String
+
+  var image: URL {
+    URL(string: "https://content.demo.microfrontends.com\(imageSrc)")!
+  }
 }
