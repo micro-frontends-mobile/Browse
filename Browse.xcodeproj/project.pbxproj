@@ -14,6 +14,8 @@
 		B53F635F2830D96900B04052 /* BrowseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F635E2830D96900B04052 /* BrowseTests.swift */; };
 		B53F63692830D96900B04052 /* BrowseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F63682830D96900B04052 /* BrowseUITests.swift */; };
 		B53F636B2830D96900B04052 /* BrowseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F636A2830D96900B04052 /* BrowseUITestsLaunchTests.swift */; };
+		B53F63782830DA8000B04052 /* RestaurantCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F63772830DA8000B04052 /* RestaurantCard.swift */; };
+		B53F637A2830DC5E00B04052 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F63792830DC5E00B04052 /* Restaurant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		B53F63642830D96900B04052 /* BrowseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrowseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53F63682830D96900B04052 /* BrowseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseUITests.swift; sourceTree = "<group>"; };
 		B53F636A2830D96900B04052 /* BrowseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B53F63772830DA8000B04052 /* RestaurantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCard.swift; sourceTree = "<group>"; };
+		B53F63792830DC5E00B04052 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				B53F634F2830D96700B04052 /* ContentView.swift */,
 				B53F63512830D96900B04052 /* Assets.xcassets */,
 				B53F63532830D96900B04052 /* Preview Content */,
+				B53F63772830DA8000B04052 /* RestaurantCard.swift */,
+				B53F63792830DC5E00B04052 /* Restaurant.swift */,
 			);
 			path = Browse;
 			sourceTree = "<group>";
@@ -257,6 +263,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B53F637A2830DC5E00B04052 /* Restaurant.swift in Sources */,
+				B53F63782830DA8000B04052 /* RestaurantCard.swift in Sources */,
 				B53F63502830D96700B04052 /* ContentView.swift in Sources */,
 				B53F634E2830D96700B04052 /* BrowseApp.swift in Sources */,
 			);
