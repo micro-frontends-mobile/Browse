@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Restaurant {
+struct Restaurant: Identifiable {
   let id: String
   let image: String
   let name: String

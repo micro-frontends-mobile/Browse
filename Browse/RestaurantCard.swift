@@ -31,6 +31,7 @@ struct RestaurantCard: View {
       }
       .padding()
     }
+    .background(.background)
   }
 }
 
