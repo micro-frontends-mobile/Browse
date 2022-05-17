@@ -23,6 +23,12 @@ struct BrowseView: View {
     .onAppear {
       browse.loadData(url: URL(string: "https://content.demo.microfrontends.com/restaurants.json")!)
     }
+    .onChange(of: searchText) { newValue in
+      browse.setSearchText(newValue)
+    }
+    .onChange(of: selectedPriceRanges) { newValue in
+      browse.setSelectedPriceRanges(newValue)
+    }
   }
 }
 

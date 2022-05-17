@@ -1,36 +1,48 @@
-//
-//  BrowseTests.swift
-//  BrowseTests
-//
-//  Created by Dongdong Zhang on 2022/5/15.
-//
+  //
+  //  BrowseTests.swift
+  //  BrowseTests
+  //
+  //  Created by Dongdong Zhang on 2022/5/15.
+  //
 
 import XCTest
 @testable import Browse
 
 class BrowseTests: XCTestCase {
+  var browse = Browse()
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+  override func setUpWithError() throws {
+    browse.restaurants = [
+      Restaurant.init(id: "id", imageSrc: "", name: "name one", priceRange: "$", description: "apple"),
+      Restaurant.init(id: "id", imageSrc: "", name: "name two", priceRange: "$$", description: "orange banana"),
+      Restaurant.init(id: "id", imageSrc: "", name: "three", priceRange: "$$$", description: "food"),
+      Restaurant.init(id: "id", imageSrc: "", name: "four", priceRange: "$$$$", description: "fruit"),
+    ]
+  }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+  override func tearDownWithError() throws {
+      // Put teardown code here. This method is called after the invocation of each test method in the class.
+  }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
+  func testCanGetCorrectPriceRanges() throws {
+    XCTAssertEqual(["$", "$$", "$$$", "$$$$"], browse.priceRanges)
+  }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+  func testCanFilterByName() throws {
+    browse.setSearchText("name")
+    browse.setSelectedPriceRanges([])
+    XCTAssertEqual(["name one", "name two"], browse.filteredRestaurants.map { $0.name })
+  }
 
+  func testCanFilterByDescription() throws {
+    browse.setSearchText("fruit")
+    browse.setSelectedPriceRanges([])
+    XCTAssertEqual(["four"], browse.filteredRestaurants.map { $0.name })
+  }
+
+  func testCanFilterByPriceRange() throws {
+    browse.setSearchText("")
+    browse.setSelectedPriceRanges(["$$", "$$$"])
+    XCTAssertEqual(["name two", "three"], browse.filteredRestaurants.map { $0.name })
+  }
 }

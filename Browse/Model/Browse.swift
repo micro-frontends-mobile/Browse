@@ -10,11 +10,28 @@ import Combine
 
 class Browse: ObservableObject {
   @Published var restaurants: RestaurantList = []
-  @Published var priceRanges: [String] = []
+  var priceRanges: [String] {
+    Array(Set(restaurants.map { $0.priceRange })).sorted()
+  }
   private var cancellable = Set<AnyCancellable>()
+  @Published private var searchText: String = ""
+  @Published private var selectedPriceRanges: [String] = []
 
   var filteredRestaurants: RestaurantList {
-    restaurants
+    return restaurants
+      .filter { searchText == "" ||
+        $0.name.lowercased().contains(searchText.lowercased()) ||
+        $0.description.lowercased().contains(searchText.lowercased())
+      }
+      .filter({ selectedPriceRanges.count == 0 || selectedPriceRanges.contains($0.priceRange) })
+  }
+
+  func setSearchText(_ searchText: String) {
+    self.searchText = searchText
+  }
+
+  func setSelectedPriceRanges(_ selectedPriceRanges: [String]) {
+    self.selectedPriceRanges =  selectedPriceRanges
   }
 
   func loadData(url: URL) {
@@ -27,7 +44,6 @@ class Browse: ObservableObject {
       .sink { _ in
       } receiveValue: { restaurants in
         self.restaurants = restaurants
-        self.priceRanges = Array(Set(restaurants.map { $0.priceRange })).sorted()
       }
       .store(in: &cancellable)
   }
