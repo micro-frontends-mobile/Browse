@@ -16,7 +16,7 @@ struct MultiplyCheckBoxView<Item: StringProtocol>: View {
     HStack {
       HStack {
         ForEach(toggles.indices, id: \.self) { index in
-          HStack {
+          HStack(spacing: 0) {
             Text("\(self.values[index].description)")
             CheckBoxView(checked: $toggles[index])
           }
