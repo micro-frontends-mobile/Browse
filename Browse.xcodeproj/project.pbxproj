@@ -21,6 +21,7 @@
 		B53F63822830F68100B04052 /* SearchSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F63812830F68100B04052 /* SearchSection.swift */; };
 		B53F63842830F9C500B04052 /* MultiplyCheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F63832830F9C500B04052 /* MultiplyCheckBoxView.swift */; };
 		B53F638628311EEA00B04052 /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F638528311EEA00B04052 /* BrowseView.swift */; };
+		B54019812833E98500151C28 /* RestaurantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54019802833E98500151C28 /* RestaurantList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		B53F63812830F68100B04052 /* SearchSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSection.swift; sourceTree = "<group>"; };
 		B53F63832830F9C500B04052 /* MultiplyCheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplyCheckBoxView.swift; sourceTree = "<group>"; };
 		B53F638528311EEA00B04052 /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
+		B54019802833E98500151C28 /* RestaurantList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				B53F63812830F68100B04052 /* SearchSection.swift */,
 				B53F63832830F9C500B04052 /* MultiplyCheckBoxView.swift */,
 				B53F638528311EEA00B04052 /* BrowseView.swift */,
+				B54019802833E98500151C28 /* RestaurantList.swift */,
 			);
 			path = Browse;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B54019812833E98500151C28 /* RestaurantList.swift in Sources */,
 				B53F63822830F68100B04052 /* SearchSection.swift in Sources */,
 				B53F638628311EEA00B04052 /* BrowseView.swift in Sources */,
 				B53F63802830E6FA00B04052 /* BrowseViewModel.swift in Sources */,

@@ -8,8 +8,6 @@
 import Foundation
 import Combine
 
-typealias RestaurantList = [Restaurant]
-
 class BrowseViewModel: ObservableObject {
   @Published var restaurants: RestaurantList = []
   @Published var priceRanges: [String] = []
