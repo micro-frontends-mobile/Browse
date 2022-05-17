@@ -11,6 +11,7 @@ struct MultiplyCheckBoxView<Item: StringProtocol>: View {
   var values: [Item]
   @Binding var selectedValues: [Item]
   @State private var toggles: [Bool] = []
+  @Binding var clear: Bool
 
   var body: some View {
     HStack {
@@ -38,6 +39,9 @@ struct MultiplyCheckBoxView<Item: StringProtocol>: View {
       }
       self.selectedValues = selectedValues.filter({ $0 != "" })
     }
+    .onChange(of: clear) { _ in
+      self.toggles = Array<Bool>(repeating: false, count: values.count)
+    }
   }
 }
 
@@ -49,10 +53,12 @@ struct MultiplyCheckBoxView_Previews: PreviewProvider {
   struct PreviewView: View {
     let values = ["$", "$$", "$$$", "$$$$", "$$$$$", "$$$$$$", "$$$$$$$$"]
     @State var selectedValues: [String] = []
+    @State var clear: Bool = false
+
     var body: some View {
       VStack(alignment: .leading) {
         Text("selectedValues: \(selectedValues.joined(separator: ","))")
-        MultiplyCheckBoxView<String>(values: values, selectedValues: $selectedValues)
+        MultiplyCheckBoxView<String>(values: values, selectedValues: $selectedValues, clear: $clear)
       }
     }
   }
