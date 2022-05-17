@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class BrowseViewModel: ObservableObject {
+class Browse: ObservableObject {
   @Published var restaurants: RestaurantList = []
   @Published var priceRanges: [String] = []
   private var cancellable = Set<AnyCancellable>()
