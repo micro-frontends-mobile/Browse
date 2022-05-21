@@ -7,14 +7,16 @@
 
 import SwiftUI
 
-struct BrowseView: View {
+public struct BrowseView: View {
   let backgroundColor = Color(uiColor: UIColor(red: 243/255, green: 243/255, blue: 222/255, alpha: 1.0))
 
   @StateObject private var browse: Browse = Browse()
   @State private var searchText: String = ""
   @State private var selectedPriceRanges: [String] = []
 
-  var body: some View {
+  public init() {}
+
+  public var body: some View {
     VStack {
       SearchSection(searchText: $searchText, selectedPriceRanges: $selectedPriceRanges, priceRanges: browse.priceRanges)
       RestaurantListView(restaurantList: browse.filteredRestaurants)
