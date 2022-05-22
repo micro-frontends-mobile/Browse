@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Env
 
 public struct BrowseView: View {
   let backgroundColor = Color(uiColor: UIColor(red: 243/255, green: 243/255, blue: 222/255, alpha: 1.0))
@@ -36,6 +37,10 @@ public struct BrowseView: View {
 
 struct BrowseView_Previews: PreviewProvider {
   static var previews: some View {
-    BrowseView()
+    NavigationView {
+      BrowseView()
+        .navigationBarHidden(true)
+        .environmentObject(Env.initialize())
+    }
   }
 }

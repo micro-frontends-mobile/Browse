@@ -17,4 +17,8 @@ struct Restaurant: Identifiable, Decodable {
   var image: URL {
     URL(string: "https://content.demo.microfrontends.com\(imageSrc)")!
   }
+
+  var url: URL {
+    URL(string: "https://content.demo.microfrontends.com/restaurants/\(id).json")!
+  }
 }

@@ -6,15 +6,19 @@
 //
 
 import SwiftUI
+import Env
 
 struct RestaurantListView: View {
   var restaurantList: RestaurantList
+  @EnvironmentObject var env: Env
 
   var body: some View {
     ScrollView {
       VStack(spacing: 16) {
         ForEach(restaurantList) { restaurant in
-          RestaurantCard(restaurant: restaurant)
+          env.router.navigate(to: restaurant.url.path) {
+            RestaurantCard(restaurant: restaurant)
+          }
         }
       }
     }
@@ -23,13 +27,16 @@ struct RestaurantListView: View {
 
 struct RestaurantListView_Previews: PreviewProvider {
   static var previews: some View {
-    RestaurantListView(restaurantList: [
-      Restaurant(
-        id: "1",
-        imageSrc: "/images/1-burger.jpg",
-        name: "Becky's Burgers",
-        priceRange: "$$",
-        description: "Juicy burgers, crunchy fries, and creamy shakes")
-    ])
+    NavigationView {
+      RestaurantListView(restaurantList: [
+        Restaurant(
+          id: "1",
+          imageSrc: "/images/1-burger.jpg",
+          name: "Becky's Burgers",
+          priceRange: "$$",
+          description: "Juicy burgers, crunchy fries, and creamy shakes")
+      ])
+      .environmentObject(Env.initialize())
+    }
   }
 }
