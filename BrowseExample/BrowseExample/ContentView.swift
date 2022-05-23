@@ -7,15 +7,16 @@
 
 import SwiftUI
 import Browse
+import Env
 
 struct ContentView: View {
-    var body: some View {
-      NavigationView {
-        BrowseView()
-          .navigationBarHidden(true)
-          .environmentObject(MyRouter() as Router)
-      }
+  var body: some View {
+    NavigationView {
+      BrowseView()
+        .navigationBarHidden(true)
+        .environmentObject(Env.initialize(router: MyRouter() as Router))
     }
+  }
 }
 
 class MyRouter: Router {
@@ -31,8 +32,8 @@ class MyRouter: Router {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-        .environmentObject(MyRouter() as Router)
-    }
+  static var previews: some View {
+    ContentView()
+      .environmentObject(Env.initialize(router: MyRouter() as Router))
+  }
 }

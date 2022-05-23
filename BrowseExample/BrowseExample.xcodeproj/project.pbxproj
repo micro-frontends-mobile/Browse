@@ -11,7 +11,8 @@
 		B579F40F2838D50400B54D4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B579F40E2838D50400B54D4A /* ContentView.swift */; };
 		B579F4112838D50600B54D4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B579F4102838D50600B54D4A /* Assets.xcassets */; };
 		B579F4142838D50600B54D4A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B579F4132838D50600B54D4A /* Preview Assets.xcassets */; };
-		B579F41E2838D53500B54D4A /* Browse in Frameworks */ = {isa = PBXBuildFile; productRef = B579F41D2838D53500B54D4A /* Browse */; };
+		B58F75F2283BF03B00D934FA /* Env in Frameworks */ = {isa = PBXBuildFile; productRef = B58F75F1283BF03B00D934FA /* Env */; };
+		B58F75F6283BF07D00D934FA /* Browse in Frameworks */ = {isa = PBXBuildFile; productRef = B58F75F5283BF07D00D934FA /* Browse */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,8 @@
 		B579F4102838D50600B54D4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B579F4132838D50600B54D4A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B579F41B2838D52800B54D4A /* Browse */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Browse; path = ..; sourceTree = "<group>"; };
+		B58F75F3283BF06400D934FA /* Browse */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Browse; path = ..; sourceTree = "<group>"; };
+		B58F75F4283BF07800D934FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,7 +31,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B579F41E2838D53500B54D4A /* Browse in Frameworks */,
+				B58F75F6283BF07D00D934FA /* Browse in Frameworks */,
+				B58F75F2283BF03B00D934FA /* Env in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +60,7 @@
 		B579F40B2838D50400B54D4A /* BrowseExample */ = {
 			isa = PBXGroup;
 			children = (
+				B58F75F4283BF07800D934FA /* Info.plist */,
 				B579F40C2838D50400B54D4A /* BrowseExampleApp.swift */,
 				B579F40E2838D50400B54D4A /* ContentView.swift */,
 				B579F4102838D50600B54D4A /* Assets.xcassets */,
@@ -76,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				B579F41B2838D52800B54D4A /* Browse */,
+				B58F75F3283BF06400D934FA /* Browse */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -104,7 +110,8 @@
 			);
 			name = BrowseExample;
 			packageProductDependencies = (
-				B579F41D2838D53500B54D4A /* Browse */,
+				B58F75F1283BF03B00D934FA /* Env */,
+				B58F75F5283BF07D00D934FA /* Browse */,
 			);
 			productName = BrowseExample;
 			productReference = B579F4092838D50400B54D4A /* BrowseExample.app */;
@@ -134,6 +141,9 @@
 				Base,
 			);
 			mainGroup = B579F4002838D50400B54D4A;
+			packageReferences = (
+				B58F75F0283BF03B00D934FA /* XCRemoteSwiftPackageReference "Env" */,
+			);
 			productRefGroup = B579F40A2838D50400B54D4A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -293,6 +303,7 @@
 				DEVELOPMENT_TEAM = RC7AU6R5A5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BrowseExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -322,6 +333,7 @@
 				DEVELOPMENT_TEAM = RC7AU6R5A5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BrowseExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -363,8 +375,24 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		B58F75F0283BF03B00D934FA /* XCRemoteSwiftPackageReference "Env" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/micro-frontends-mobile/Env";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		B579F41D2838D53500B54D4A /* Browse */ = {
+		B58F75F1283BF03B00D934FA /* Env */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B58F75F0283BF03B00D934FA /* XCRemoteSwiftPackageReference "Env" */;
+			productName = Env;
+		};
+		B58F75F5283BF07D00D934FA /* Browse */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Browse;
 		};

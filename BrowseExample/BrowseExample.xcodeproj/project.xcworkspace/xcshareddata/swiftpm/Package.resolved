@@ -1,12 +1,12 @@
 {
   "pins" : [
     {
-      "identity" : "environment",
+      "identity" : "env",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/micro-frontends-mobile/Environment",
+      "location" : "https://github.com/micro-frontends-mobile/Env",
       "state" : {
-        "revision" : "5fa729b9d3f8bbffddc36c9587d1d0b2068e0113",
-        "version" : "0.1.0"
+        "revision" : "d27992f81097726376bda24cf61a071f15f8594e",
+        "version" : "0.3.1"
       }
     }
   ],
