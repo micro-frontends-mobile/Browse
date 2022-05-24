@@ -22,7 +22,7 @@ public struct BrowseView: View {
       RestaurantListView(restaurantList: browse.filteredRestaurants)
     }
     .onAppear {
-      browse.loadData(url: URL(string: "https://content.demo.microfrontends.com/restaurants.json")!)
+      browse.loadData(url: restaurantsUrl)
     }
     .onChange(of: searchText) { newValue in
       browse.setSearchText(newValue)
@@ -31,6 +31,10 @@ public struct BrowseView: View {
       browse.setSelectedPriceRanges(newValue)
     }
     .background(env.configuration.backgroundColor)
+  }
+
+  private var restaurantsUrl: URL {
+    URL(string: "\(env.configuration.host)/restaurants.json")!
   }
 }
 
